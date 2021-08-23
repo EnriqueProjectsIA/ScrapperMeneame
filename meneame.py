@@ -761,24 +761,7 @@ class Meneame:
 
         return(dict_info)
 
-if __name__ == "__main__":
 
-    df=pd.read_csv(r'/Users/alvaro/Desktop/Python/Scrapper/top_news_data.csv')
-    story_link=df['ref_men_url'].iloc[0]
-
-    meneame_obj=Meneame("https://www.meneame.net")
-    url=meneame_obj.construct_page(section="story",link_story=story_link)
-
-    full_html_text=meneame_obj.get_html(url,page_number=1)[1]
-
-    info=meneame_obj.get_comment_info(full_html_text)
-
-    list_of_keys=list(info.keys())
-
-    number_of_comments=len(info[list_of_keys[0]])
-
-
-    print(info)
 
 
 
